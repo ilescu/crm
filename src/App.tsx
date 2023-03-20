@@ -1,9 +1,18 @@
 import React from 'react';
+import {Link, Outlet} from "react-router-dom";
 
 const App: React.FC = () => {
+
     return (
         <>
-         <h1 className="text-center">React</h1>
+            <div className="mt-5">
+                <Link to="/" className="btn btn-primary">Home</Link>
+                <Link to="/login" className="btn btn-primary">Login</Link>
+                <Link to="/register" className="btn btn-primary">Register</Link>
+            </div>
+            <div>
+                <Outlet/>
+            </div>
         </>
     );
 };

@@ -4,10 +4,10 @@ import '@/index.css'
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
 import App from "@/App";
 import Home from "@/pages/Home";
-import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import {Provider} from "react-redux";
 import {store} from "@/store";
+import Login from "@/modules/auth/view/Login";
 
 
 const router = createBrowserRouter(

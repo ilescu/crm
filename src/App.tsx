@@ -1,14 +1,19 @@
 import React from 'react';
 import {Link, Outlet} from "react-router-dom";
+import {useAuth} from "@/hooks/reduxHooks";
 
 const App: React.FC = () => {
-
+    const {isAuth} = useAuth()
     return (
         <>
             <div className="mt-5 flex">
-                <Link to="/" className="btn btn-primary">Home</Link>
-                <Link to="/login" className="btn btn-primary">Login</Link>
-                <Link to="/register" className="btn btn-primary">Register</Link>
+                {isAuth && <Link to="/" className="btn btn-primary">Home</Link>}
+                {!isAuth &&
+                    <>
+                        <Link to="/login" className="btn btn-primary">Login</Link>
+                        <Link to="/register" className="btn btn-primary">Register</Link>
+                    </>
+                }
             </div>
             <div>
                 <Outlet/>

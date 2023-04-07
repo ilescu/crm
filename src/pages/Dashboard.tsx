@@ -3,7 +3,7 @@ import {logout} from "@/modules/auth/store/userSlice";
 import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 
-const Home = () => {
+const Dashboard = () => {
     const {isAuth, email, token} = useAuth()
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
@@ -29,4 +29,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Dashboard;

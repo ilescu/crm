@@ -2,7 +2,6 @@ import React from 'react';
 import {ArticleService} from "@/modules/articles/services/ArticleService"
 import {articleData} from "@/modules/articles/model/Article"
 import {perPage} from "@/config"
-import Article from "@/modules/articles/view/Article";
 
 const Articles = () => {
 
@@ -27,7 +26,12 @@ const Articles = () => {
                 <>
                     <ul className="mt-5">
                         {
-                            articles.data.map((article: articleData) => <Article key={article.id} article={article} />)
+                            articles.data.map((article: articleData) => (
+                                <li key={article.id} className="border-b-2 border-gray-200">
+                                    <h2 className="text-2xl font-bold">{article.sku}</h2>
+                                    <p className="text-red-800">{article.last_price}</p>
+                                </li>
+                            ))
                         }
                     </ul>
                     <div>

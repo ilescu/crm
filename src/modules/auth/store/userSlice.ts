@@ -35,7 +35,6 @@ export const userSlice = createSlice({
             state.token = null
             state.email = null
             localStorage.removeItem(key)
-            navigator
         }
     }
 })

@@ -1,29 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import '@/index.css'
-import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
-import App from "@/App";
-import Dashboard from "@/pages/Dashboard";
-import Register from "@/pages/Register";
 import {Provider} from "react-redux";
 import {store} from "@/store";
-import Login from "@/modules/auth/view/Login";
-
-
-const router = createBrowserRouter(
-    createRoutesFromElements(
-        <Route path="/" element={<App/>}>
-            <Route index element={<Dashboard/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/register" element={<Register/>}/>
-        </Route>
-    )
-)
+import App from "@/App";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <Provider store={store}>
-            <RouterProvider router={router} />
+            <App />
         </Provider>
     </React.StrictMode>
 )

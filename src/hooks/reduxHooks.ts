@@ -5,6 +5,9 @@ export const useAppDispatch: () => AppDispatch = useDispatch
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
 
 export const useAuth = () => {
+    const role = {
+        user: true
+    }
     const {email, token, id} = useAppSelector((state) => state.user)
 
     return {

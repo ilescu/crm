@@ -23,7 +23,7 @@ export const authApiSchema = (url: string) => {
 }
 
 export const crudApiSchema = (url: string) => {
-    const list = (config = {}) => {
+    const index = (config = {}) => {
         return request.get(url, config)
     }
 
@@ -43,9 +43,8 @@ export const crudApiSchema = (url: string) => {
         return request.delete(`${url}/${id}`, config)
     }
 
-    return { list, show, store, update, destroy }
+    return { index, show, store, update, destroy }
 }
-
 
 request.interceptors.request.use(({ token, branchId, headers, ...config }: any) => {
     headers = { 'Content-Type': 'application/json', Accept: 'application/json', 'Branch-Id': branchId || 0, ...headers }

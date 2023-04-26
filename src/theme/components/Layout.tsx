@@ -15,7 +15,7 @@ const Layout = () => {
             </main>
             <footer className="text-center mt-5">(c) 2023</footer>
         </>
-    );
-};
+    )
+}
 
 export default Layout;

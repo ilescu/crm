@@ -15,6 +15,21 @@ const TestPage = () => {
             setCount2(count2 + 1)
         }
     }
+    const numbers = [
+        {id: 1, name: 'Test', value: true},
+        {id: 2, name: 'Test', value: true},
+        {id: 3, name: 'Anatolii', value: true},
+        {id: 4, name: 'Test', value: true},
+    ] as any
+
+
+    const total = numbers.reduce((acc: any, item: any) => {
+        return !item.value
+            ? [...acc, {...item, name: 'Test', value: true}]
+            : [...acc, item]
+    }, [])
+
+    total.map((i:any) => console.log(i))
 
     return (
         <>
